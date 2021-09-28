@@ -1,0 +1,66 @@
+:root {
+    --light: #BEE5D3;
+    --dark:#abb0f0;
+    --navlink-color: #48b8f5;
+  } 
+/*Change colors, this is what I used for portfolio*/
+body {
+ 
+    line-height: 1;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    background-color:#FFF9AF;
+    background-image: linear-gradient(#faf9f2,#fff9AF);
+    align-items:center;;
+}
+/*try flexbox since I did grid last time?*/
+
+.h1{
+    justify-self: center; /*CENTER?!??!?!?!*/
+    text-shadow: 1px 1px 2px white, 0 0 25px #d0d2f0, 0 0 5px #10f0f8;
+}
+
+
+ /*size of main box, background, font, color, text UGHHHHH MAKE IT CENTERED*/
+.mainbox {
+display: flex;
+justify-self: center;
+width: 650px;
+height: 500px;
+background-color: rgb(145, 248, 243);
+border-color:azure;
+border-width: 10px;
+border-style: inset;   
+}
+
+/*questions text font size color*/
+.question{
+    font-size:25px;
+}
+
+/*answers button color, text, font, size, color*/
+.foranswers{
+    font-size:15px;
+}
+
+/*resultsbox container/*text font size color*/
+.resultsbox {
+    display: flex;
+    justify-self: center;
+    width: 650px;
+    height: 500px;
+    background-color: aquamarine;
+    border-color:azure;
+    border-width: 10px;
+    border-style: inset;   
+    }
+
+    /*results/*text font size color input box prompt for initials*/
+    .input {
+font-size: 25px;
+
+}
+    /*savebutton/*text font size color, button color*/
+    .savebutton {
+        font-size:15px;
+    }
