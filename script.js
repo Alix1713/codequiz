@@ -16,12 +16,19 @@
 // make strings for answers to questions?
 //write start button
 
-var generateBtn = document.querySelector("start");
+let currentQuestion = 0
+var questiontext = document.querySelector(".questiontext") //selects question text
+var button1 = document.querySelector(".button1")
+var button2 = document.querySelector(".button2")
+var button3 = document.querySelector(".button3")
+var button4 = document.querySelector(".button4")
 
-generateBtn.onclick =(){
-prompt (questions)
- questions = [
-    {
+var generateBtn = document.querySelector("#start");
+var quizArea = document.querySelector(".quizarea")
+//generateBtn.onclick = function () { 
+let questions
+questions = [
+  {
     numb: 1,
     question: "What does CSS stand for?",
     answer: "Cascading Style Sheet",
@@ -30,88 +37,101 @@ prompt (questions)
       "Cue Slide Show",
       "Cascading Style Sheet",
       "Color Style Sheet"
-    ]}
-      let questions = [
-        {
-        numb: 2,
-        question: "Which of these is not a coding language?",
-        answer: "div",
-        options: [
-          "html",
-          "css",
-          "javascript",
-          "div"
-        ]}
-          let questions = [
-            {
-            numb: 3,
-            question: "What do you use psuedocode for?",
-            answer: "adding notation",
-            options: [
-              "adding images"===false;
-              "adding notation"===true;
-              "adding paragraphs"===false;
-              "adding music"===false;
-            ]}[
-            if answer ===true 
-            let questionsAnswer= [+1]}
-              let questions = [
-                {
-                numb: 4,
-                question: "What is ...",
-                answer: "Cascading Style Sheet",
-                options: [
-                  "Common Style Selector",
-                  "Cue Slide Show",
-                  "Cascading Style Sheet",
-                  "Color Style Sheet"
-                ]}
-                  let questions = [
-                    {
-                    numb: 5,
-                    question: "What does....",
-                    answer: "Cascading Style Sheet",
-                    options: [
-                      "Common Style Selector",
-                      "Cue Slide Show",
-                      "Cascading Style Sheet",
-                      "Color Style Sheet"
-                    ]}
+    ]
+  },
+  {
+    numb: 2,
+    question: "Which of these is not a coding language?",
+    answer: "div",
+    options: [
+      "html",
+      "css",
+      "javascript",
+      "div"
+    ]
+  },
+  {
+    numb: 3,
+    question: "What do you use psuedocode for?",
+    answer: "adding notation",
+    options: [
+      "adding images",
+      "adding notation",
+      "adding paragraphs",
+      "adding music",
+    ]
+  },
+  {
+    numb: 4,
+    question: "What is an event listener?",
+    answer: "it waits for an event",
+    options: [
+      "it waits for an event",
+      "it hears everything",
+      "it listens to music",
+      "it plans events"
+    ]
+  },
+  {
+    numb: 5,
+    question: "What does a string do?",
+    answer: "stores text",
+    options: [
+      "makes an example",
+      "plays a guitar",
+      "ties shoes",
+      "stores text"
+    ]
+  }
+]
 
-questionsAnswer.push ("correct")
+//questionsAnswer.push("correct")
 //query selectors?
 
 //local storage to store answers
 
 //TIMER?!!??!?
-setInterval(timer, 75) //set timer at 75 seconds
-function timer();{
-    {if (questionsAnswer === false){
-    timer -5; 
-}
-var sec = 15;
-var time = setInterval(myTimer, 75);
+//setInterval(timer, 75) //set timer at 75 seconds
+//generateBtn.onclick
+//function timer(); {
+//  {
+//   if (questionsAnswer === false) {
+//     timer - 5;
+//   }
+//   var sec = 15;
+//   var time = setInterval(myTimer, 750000);
+// function myFunction() {
+//  alert('Out of Time');
+// }
+//   //input box for name
 
-//input box for name
 
+//   //store score
+//   var points = 0;
+//   var total = [];
 
-//store score
-var points = 0;
-var total = [];
-
-//for loop from w3
-for (var i = 0; i < total; i++)
-{
-if (questions[i] == answers[i]) {
-        points = points + 1; 
-    }
-}
-
+//   //for loop from w3
+//   for (var i = 0; i < total; i++) {
+//     if (questions[i] == answers[i]) { //reference 128 styling
+//       points = points + 1;
+//     }
+//   }
+// }
 //show score
-function show.results
+//function show.results
 
 //addEventListener 
-generateBtn.addEventListener('click'), function ("score");
+//generateBtn.addEventListener('click'), function ("score");
 
-//addButton.addEventListener("questionOne", function)
-generateBtn.addEventListener('click'), function ("start");
+//addButton.addEventListener
+generateBtn.addEventListener('click', function () {
+  quizArea.style.display = "block" //lookup block later this shows questions 
+  generateBtn.style.display = "none" //dont need a second event listener this hides start button
+  questiontext.innerText = questions[currentQuestion].question
+  button1.innerText = questions[currentQuestion].options[0]
+  button2.innerText = questions[currentQuestion].options[1]
+  button3.innerText = questions[currentQuestion].options[2]
+  button4.innerText = questions[currentQuestion].options[3]
+  // onclick = "setTimeout(myTimer, 750000)";
+})
+//event listener for buttons
