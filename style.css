@@ -11,7 +11,6 @@ body {
     font-size: 20px;
     background-color:#FFF9AF;
     background-image: linear-gradient(#faf9f2,#fff9AF);
-    align-items:center;;
 }
 /*try flexbox since I did grid last time?*/
 
@@ -23,10 +22,9 @@ body {
 
  /*size of main box, background, font, color, text UGHHHHH MAKE IT CENTERED*/
 .mainbox {
-display: flex;
 justify-self: center;
 width: 650px;
-height: 500px;
+height: 350px;
 background-color: rgb(145, 248, 243);
 border-color:azure;
 border-width: 10px;
@@ -46,9 +44,9 @@ border-style: inset;
 /*resultsbox container/*text font size color*/
 .resultsbox {
     display: flex;
-    justify-self: center;
-    width: 650px;
-    height: 500px;
+    row-gap:  10px;
+    width: 500px;
+    height: 350px;
     background-color: aquamarine;
     border-color:azure;
     border-width: 10px;
