@@ -3,9 +3,7 @@
     --dark:#abb0f0;
     --navlink-color: #48b8f5;
   } 
-/*Change colors, this is what I used for portfolio*/
 body {
- 
     line-height: 1;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
@@ -15,14 +13,13 @@ body {
 /*try flexbox since I did grid last time?*/
 
 .h1{
-    justify-self: center; /*CENTER?!??!?!?!*/
+    color:rgb(37, 192, 192);
+    align-self: center; /*WHY IS IT NOT CENTER?!??!?!?!*/
     text-shadow: 1px 1px 2px white, 0 0 25px #d0d2f0, 0 0 5px #10f0f8;
 }
-
-
  /*size of main box, background, font, color, text UGHHHHH MAKE IT CENTERED*/
 .mainbox {
-justify-self: center;
+align-self: center;
 width: 650px;
 height: 350px;
 background-color: rgb(145, 248, 243);
@@ -32,13 +29,19 @@ border-style: inset;
 }
 
 /*questions text font size color*/
-.question{
-    font-size:25px;
+.quizarea{
+    display: none;
 }
+
+.questiontext{
+
+}
+
+/*if I want css buttons here*/
 
 /*answers button color, text, font, size, color*/
 .foranswers{
-    font-size:15px;
+    font-size:20px;
 }
 
 /*resultsbox container/*text font size color*/
@@ -61,4 +64,6 @@ font-size: 25px;
     /*savebutton/*text font size color, button color*/
     .savebutton {
         font-size:15px;
+        background-color: #d0d2f0;
+        
     }
