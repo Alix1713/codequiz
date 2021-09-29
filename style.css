@@ -21,12 +21,20 @@ body {
 .mainbox {
 align-self: center;
 width: 650px;
-height: 350px;
-background-color: rgb(145, 248, 243);
+height: 300px;
+background-color: lightblue;
 border-color:azure;
 border-width: 10px;
-border-style: inset;   
+border-style: inset;  
+font-size:30px;
+justify-content: space-between;
+align-content: center;
 }
+
+.h2{
+    font-size: 25px;
+    text-shadow: 2px 2px 2px white;
+    }
 
 /*questions text font size color*/
 .quizarea{
@@ -40,20 +48,26 @@ border-style: inset;
 /*if I want css buttons here*/
 
 /*answers button color, text, font, size, color*/
-.foranswers{
+.forAnswers{
+    display:none;
     font-size:20px;
 }
 
 /*resultsbox container/*text font size color*/
 .resultsbox {
-    display: flex;
+    justify-content: space-evenly;
     row-gap:  10px;
-    width: 500px;
-    height: 350px;
-    background-color: aquamarine;
+    width: 650px;
+    height: 300px;
+    background-color: lightblue;
     border-color:azure;
     border-width: 10px;
     border-style: inset;   
+}
+
+    .h3{
+        font-size:25px;
+    text-shadow: 4px 4px 4px white;
     }
 
     /*results/*text font size color input box prompt for initials*/
