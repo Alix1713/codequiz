@@ -22,9 +22,11 @@ var button1 = document.querySelector(".button1")
 var button2 = document.querySelector(".button2")
 var button3 = document.querySelector(".button3")
 var button4 = document.querySelector(".button4")
+var count = document.querySelector("#time")
 
 var generateBtn = document.querySelector("#start");
-var quizArea = document.querySelector(".quizarea")
+var quizArea = document.querySelector(".quizarea");
+var saveBtn = document.querySelector("#savebutton");
 //generateBtn.onclick = function () { 
 let questions
 questions = [
@@ -36,7 +38,7 @@ questions = [
       "Common Style Selector",
       "Cue Slide Show",
       "Cascading Style Sheet",
-      "Color Style Sheet"
+      "Color Style Sheet",
     ]
   },
   {
@@ -47,7 +49,7 @@ questions = [
       "html",
       "css",
       "javascript",
-      "div"
+      "div",
     ]
   },
   {
@@ -69,7 +71,7 @@ questions = [
       "it waits for an event",
       "it hears everything",
       "it listens to music",
-      "it plans events"
+      "it plans events",
     ]
   },
   {
@@ -80,58 +82,73 @@ questions = [
       "makes an example",
       "plays a guitar",
       "ties shoes",
-      "stores text"
+      "stores text",
     ]
   }
 ]
-
-//questionsAnswer.push("correct")
-//query selectors?
-
-//local storage to store answers
-
-//TIMER?!!??!?
-//setInterval(timer, 75) //set timer at 75 seconds
-//generateBtn.onclick
-//function timer(); {
-//  {
-//   if (questionsAnswer === false) {
-//     timer - 5;
-//   }
-//   var sec = 15;
-//   var time = setInterval(myTimer, 750000);
-// function myFunction() {
-//  alert('Out of Time');
-// }
-//   //input box for name
-
-
-//   //store score
-//   var points = 0;
-//   var total = [];
-
-//   //for loop from w3
-//   for (var i = 0; i < total; i++) {
-//     if (questions[i] == answers[i]) { //reference 128 styling
-//       points = points + 1;
-//     }
-//   }
-// }
-//show score
-//function show.results
-
-//addEventListener 
-//generateBtn.addEventListener('click'), function ("score");
-
 //addButton.addEventListener
 generateBtn.addEventListener('click', function () {
   quizArea.style.display = "block" //lookup block later this shows questions 
-  generateBtn.style.display = "none" //dont need a second event listener this hides start button
+  generateBtn.style.display = "none"
   questiontext.innerText = questions[currentQuestion].question
   button1.innerText = questions[currentQuestion].options[0]
   button2.innerText = questions[currentQuestion].options[1]
   button3.innerText = questions[currentQuestion].options[2]
   button4.innerText = questions[currentQuestion].options[3]
-  // onclick = "setTimeout(myTimer, 750000)";
+  setInterval(countdown, 1000)
 })
+
 //event listener for buttons
+//button1.addEventListener('click', function () {
+// .questions[currentQuestion[+1]];
+//  addScore[+0]
+//})
+//button2.addEventListener('click', function () {})
+//.questions[currentQuestion[+1]];
+//  addScore[+0]
+//})
+//button3.addEventListener('click', function () {})
+//.questions[currentQuestion[+1]];
+//  addScore[+1]
+//button4.addEventListener('click', function () {})
+//.questions[currentQuestion[+1]];
+//  addScore[+0]
+
+//append next question?
+
+//score
+let score
+score = [
+  {
+    text: "Your score is",
+  }
+]
+//save button and scoring
+saveBtn.addEventListener('click', function () {
+  forAnswers.style.display = "block"
+  scoretext.innerText = text
+})
+//questionsAnswer.push("correct")
+//query selectors?
+//local storage to store answers
+//   var points = 0;
+//   var total = [];
+
+
+//no touchy this is timer part 1
+var currentCount = 75
+count.innerText = currentCount
+function countdown() {
+  currentCount--
+  count.innerText = currentCount
+}
+if (currentCount <= 1); {
+  alert('Out of Time');
+}
+
+//make timer part two : remove time when wrong
+// function countdown();
+//   {
+//   if (questionsAnswer === [0]) {
+//    currentCount - 5;
+//   }
