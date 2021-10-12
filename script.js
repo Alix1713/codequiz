@@ -1,6 +1,15 @@
 //Assignment Code
+
+// define variables
+
+// define functions
+
+// call functions to run app
+
+
 //Make a quiz
-//click start and a timer begins
+//click start to get to question 1
+// timer hits 0 alert and end quiz
 //Given a question
 //When first question answered, goes to next question, next question
 //When answered incorrectly time is subtracted from timer countdown
@@ -77,8 +86,10 @@ generateBtn.addEventListener('click', function () {
   quizArea.style.display = "block"
   generateBtn.style.display = "none"
   load_question(currentQuestion)
+  setInterval(countdown, 1000)
 });
-
+//moved set interval because it was in the wrong function
+//each time load question loaded it would make it faster
 function load_question(currentQuestion) {
   questiontext.innerText = questions[currentQuestion].question
   button1.innerText = questions[currentQuestion].options[0]
@@ -86,12 +97,11 @@ function load_question(currentQuestion) {
   button3.innerText = questions[currentQuestion].options[2]
   button4.innerText = questions[currentQuestion].options[3]
   corr_answer = questions[currentQuestion].answer
-  setInterval(countdown, 1000)
 };
 
 button1.onclick = function () {
   if (questions[currentQuestion].answer === button1.innerText) {
-    score = score++;
+    score += 1;
     alert('Correct');
   }
   else {
@@ -102,7 +112,7 @@ button1.onclick = function () {
 };
 button2.onclick = function () {
   if (questions[currentQuestion].answer === button2.innerText) {
-    score = score++;
+    score += 1;
     alert('Correct');
   }
   else {
@@ -113,7 +123,7 @@ button2.onclick = function () {
 };
 button3.onclick = function () {
   if (questions[currentQuestion].answer === button3.innerText) {
-    score = score++;
+    score += 1;
     alert('Correct');
   }
   else {
@@ -124,7 +134,7 @@ button3.onclick = function () {
 };
 button4.onclick = function () {
   if (questions[currentQuestion].answer === button4.innerText) {
-    score = score++;
+    score += 1;
     alert('Correct');
   }
   else {
@@ -134,37 +144,21 @@ button4.onclick = function () {
   load_question(currentQuestion);
 };
 
-//score
-//let score
-//score =
-//{text: "Your score is",}
-
-
 //save button and scoring
 saveBtn.addEventListener('click', function () {
-  forAnswers.style.display = "block"
-  scoretext.innerText = text
+  //forAnswers.style.display = "block"
+  var userInitials = document.querySelector(".form-input").value
+  localStorage.setItem(userInitials, score);
+  document.getElementById("score").innerText = "Your score is: " + score
 });
-//local storage to store answers
-//var setScore = "initials"
-//localStorage.setScore("initials");
-//document.getElementById("result").innerHTML = localStorage.getScore("initials")
-
-//questionsAnswer.push("correct")
-//query selectors?
-
-//   var points = 0;
-//   var total = [];
-
 
 //no touchy this is timer part 1
 var currentCount = 75
 count.innerText = currentCount
 function countdown() {
-  currentCount--
-  count.innerText = currentCount
+  if (currentCount > 0) {
+    currentCount--
+    count.innerText = currentCount
+  }
 }
-//if (count.innerText === 0); {
-//  alert('Try Again');
- // if (questionsAnswer === [0]) {
-  //  currentCount - 5;
+//function countdown added
