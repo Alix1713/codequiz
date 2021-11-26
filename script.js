@@ -29,7 +29,8 @@ var button2 = document.querySelector("#button2");
 var button3 = document.querySelector("#button3");
 var button4 = document.querySelector("#button4");
 var count = document.querySelector("#time");
-
+var currentCount = 75;
+var isRunning = true;
 var generateBtn = document.querySelector("#start");
 var quizArea = document.querySelector(".quizarea");
 var saveBtn = document.querySelector("#savebutton");
@@ -91,6 +92,16 @@ generateBtn.addEventListener('click', function () {
 //moved set interval because it was in the wrong function
 //each time load question loaded it would make it faster
 function load_question(currentQuestion) {
+  if (currentQuestion >= questions.length){
+    isRunning = false;
+    questiontext.innerText = "Enter your initials to see your score!"
+    button1.innerText = "";
+    button2.innerText = "";
+    button3.innerText = "";
+    button4.innerText = "";
+    corr_answer = "";
+    return;
+  }
   questiontext.innerText = questions[currentQuestion].question
   button1.innerText = questions[currentQuestion].options[0]
   button2.innerText = questions[currentQuestion].options[1]
@@ -106,6 +117,7 @@ button1.onclick = function () {
   }
   else {
     alert('Incorrect');
+    currentCount -=5;
   }
   currentQuestion += 1;
   load_question(currentQuestion);
@@ -117,6 +129,7 @@ button2.onclick = function () {
   }
   else {
     alert('Incorrect');
+    currentCount -=5;
   }
   currentQuestion += 1;
   load_question(currentQuestion);
@@ -128,6 +141,7 @@ button3.onclick = function () {
   }
   else {
     alert('Incorrect');
+    currentCount -=5;
   }
   currentQuestion += 1;
   load_question(currentQuestion);
@@ -139,6 +153,7 @@ button4.onclick = function () {
   }
   else {
     alert('Incorrect');
+    currentCount -=5;
   }
   currentQuestion += 1;
   load_question(currentQuestion);
@@ -153,10 +168,10 @@ saveBtn.addEventListener('click', function () {
 });
 
 //no touchy this is timer part 1
-var currentCount = 75
+
 count.innerText = currentCount
 function countdown() {
-  if (currentCount > 0) {
+  if (currentCount > 0 && isRunning) {
     currentCount--
     count.innerText = currentCount
   }
